@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Image Slider</string>
+    <string name="slide">image</string>
+    <string name="counter">1|6</string>
+    <string name="leftButton">PREV</string>
+    <string name="rightButton">NEXT</string>
+    <string name="name">Nature photo image 1</string>
+</resources>
