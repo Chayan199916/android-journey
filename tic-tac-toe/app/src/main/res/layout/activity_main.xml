@@ -199,6 +199,42 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.541" />
 
+    <LinearLayout
+        android:id="@+id/playAgainLayout"
+        android:layout_width="232dp"
+        android:layout_height="194dp"
+        android:background="#DDD59C"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/winningMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            app:fontFamily="serif-monospace" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#EFE2E2"
+            android:onClick="matchReset"
+            android:text="@string/playAgainButton"
+            android:textColor="#C1A6A6"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:visibility="visible" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/score1"
         android:layout_width="wrap_content"

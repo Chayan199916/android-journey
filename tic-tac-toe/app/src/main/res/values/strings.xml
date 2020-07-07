@@ -5,4 +5,5 @@
     <string name="heading">Hello User, Welcome!</string>
     <string name="player_1_score">Player 1 : 0</string>
     <string name="player_2_score">Player 2 : 0</string>
+    <string name="playAgainButton">play again</string>
 </resources>
