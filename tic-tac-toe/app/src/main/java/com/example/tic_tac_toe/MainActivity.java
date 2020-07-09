@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             for(int i = 0; i < 8; i++){
                 if(curPosOfGame[validWinPositions[i][0]] == curPosOfGame[validWinPositions[i][1]] && curPosOfGame[validWinPositions[i][1]] == curPosOfGame[validWinPositions[i][2]] && curPosOfGame[validWinPositions[i][1]] != 2){
                    winTeam = curPosOfGame[validWinPositions[i][0]] == 0 ? "Player 1" : "Player 2";
-                   Toast.makeText(this, "GAME OVER !", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(this, "GAME OVER !", Toast.LENGTH_LONG).show();
                    status.setText(winTeam + " has won, yaay!");
                     if(winTeam.equals("Player 1")){
                         player1_score++;
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             if(player1_score == 2){
-                Toast.makeText(this, "SERIES OVER !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "SERIES OVER !", Toast.LENGTH_LONG).show();
                 LinearLayout playAgain = (LinearLayout) findViewById(R.id.playAgainLayout);
                 TextView winningMessage = (TextView) findViewById(R.id.winningMessage);
                 winningMessage.setText("Player 1 has won, Congrats!");
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 mainLayout.animate().alpha(0.2f).setDuration(2000);
                 player1_score = player2_score = 0;
             }else if (player2_score == 2){
-                Toast.makeText(this, "SERIES OVER !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "SERIES OVER !", Toast.LENGTH_LONG).show();
                 LinearLayout playAgain = (LinearLayout) findViewById(R.id.playAgainLayout);
                 TextView winningMessage = (TextView) findViewById(R.id.winningMessage);
                 winningMessage.setText("Player 2 has won, Congrats!");
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             if(flag == 1 && gameValid != false){
-                Toast.makeText(this, "GAME OVER !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "GAME OVER !", Toast.LENGTH_LONG).show();
                 status.setText("Match tied! Tap to start again.");
 //                LinearLayout playAgain = (LinearLayout) findViewById(R.id.playAgainLayout);
 //                TextView winningMessage = (TextView) findViewById(R.id.winningMessage);
