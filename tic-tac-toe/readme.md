@@ -7,4 +7,6 @@
 4. scoreboard for 2 players is available to Keep tracK of their scores.
 5. Restart button available after series is over.
 
-<img src=".\screenshots\draw_match.png" height=300 width=200>
+* This is the Home screen interface
+
+<img src=".\screenshots\draw_match.png" height=600 width=400>
