@@ -5,5 +5,6 @@
 2. when a player wins, victory message is shown 
 3. out of 3 if a player wins 2 games, he will be declared as series winner.
 4. scoreboard for 2 players is available to Keep tracK of their scores.
+5. Restart button available after series is over.
 
-<img src=".\screenshots\draw_match.png">
+<img src=".\screenshots\draw_match.png" height=300 width=200>
