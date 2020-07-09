@@ -4,7 +4,7 @@
 
 2. Counter is incremented by 1 each time next button is pressed and decremented by 1 when prev button is pressed, When it reaches to max value, again starts from the first image.
 
-* Some screenshots of screens
+* Some screenshots
 
 <img src=".\screenshots\image1.png" height=800 weight=400>
 <img src=".\screenshots\image2.png" height=800 weight=400>
