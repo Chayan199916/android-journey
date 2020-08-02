@@ -1,0 +1,1 @@
+### All concepts that I learned throughout the journey.
