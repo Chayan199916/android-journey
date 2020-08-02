@@ -9,3 +9,7 @@
 * Screenshot
 
 <img src=".\screenshots\image1.png" height=600 weight=400>
+
+* Source of sounds
+
+http://soundbible.com/
