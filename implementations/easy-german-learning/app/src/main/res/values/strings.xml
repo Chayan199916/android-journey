@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Easy German Learning</string>
+    <string name="welcomeMessage">Play with German!</string>
+    <string name="GutenMorgen">Good Morning!</string>
+    <string name="GutenTag">Good Day!</string>
+    <string name="GutenAbend">Good Evening!</string>
+    <string name="GuteNacht">Good Night!</string>
+    <string name="AufWiedersehen">Good Bye!</string>
+    <string name="Bitte">Please.</string>
+    <string name="Estutmirleid">I am sorry!</string>
+    <string name="WiegehtesIhnen">How are you?</string>
+    <string name="Ichheisse">My name is...</string>
+    <string name="esfreutmich">Nice to meet you.</string>
+</resources>
