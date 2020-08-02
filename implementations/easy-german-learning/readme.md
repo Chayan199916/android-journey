@@ -8,4 +8,4 @@
 
 * Screenshot
 
-<img src=".\screenshots\image1.png" height=800 weight=400>
+<img src=".\screenshots\image1.png" height=600 weight=400>
