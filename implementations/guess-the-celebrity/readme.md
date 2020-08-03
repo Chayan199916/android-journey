@@ -14,7 +14,11 @@
 
 -> All these downloading images and scraping web content are done in seperate threads.
 
-### Screenshots
+### Screenshots and a demo video
 
 <img src=".\screenshots\image1.png" height=600 width=400>
 <img src=".\screenshots\image2.png" height=600 width=400>
+
+<video width=”400” height=”300” controls=”controls”>
+<source src=”.\screenshots\video1.webm” type=”video/webm” />
+</video>
