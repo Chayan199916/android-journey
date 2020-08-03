@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Egg Timer</string>
+    <string name="buttonView">Start!</string>
+</resources>
