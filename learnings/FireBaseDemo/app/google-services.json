@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "240970148220",
+    "firebase_url": "https://fir-demo-project-f673b.firebaseio.com",
+    "project_id": "fir-demo-project-f673b",
+    "storage_bucket": "fir-demo-project-f673b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240970148220:android:c892a2f42973d407a51cf9",
+        "android_client_info": {
+          "package_name": "com.example.onetonteaching.firebasedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240970148220-unm43bgjs5cqjdmia2tv1h5a0fc1se1h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARflmvq8VMN4Ob7MPLK2pd3GwkR2LKTcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240970148220-unm43bgjs5cqjdmia2tv1h5a0fc1se1h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
