@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Guess The Number</string>
+    <string name="welcomeMessage">Jobless? Let\'s play a game !</string>
+    <string name="titleText">Guess a number between 1-20?</string>
+    <string name="guessedNumberHint">Enter the number</string>
+    <string name="buttonView">Guess</string>
+</resources>
