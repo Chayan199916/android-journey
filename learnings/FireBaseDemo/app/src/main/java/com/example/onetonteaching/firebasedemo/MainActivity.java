@@ -15,19 +15,23 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-//import com.google.firebase.database.DatabaseError;
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
-import com.google.firebase.firestore.FieldValue;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.ListenerRegistration;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.DocumentSnapshot;
+//import com.google.firebase.firestore.EventListener;
+//import com.google.firebase.firestore.FieldValue;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.FirebaseFirestoreException;
+//import com.google.firebase.firestore.ListenerRegistration;
+//import com.google.firebase.firestore.QueryDocumentSnapshot;
+//import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
 
     // step - 1 : Initialize cloud firestore
 
-    final FirebaseFirestore db = FirebaseFirestore.getInstance();
+//    final FirebaseFirestore db = FirebaseFirestore.getInstance();
     Button button;
     TextView textView;
-    ListenerRegistration listener;
-    DocumentReference docref = db.collection("users").document("uNT2muB7HGkPKh1E0p5a");
+//    ListenerRegistration listener;
+//    DocumentReference docref = db.collection("users").document("uNT2muB7HGkPKh1E0p5a");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,19 +53,23 @@ public class MainActivity extends AppCompatActivity {
 
         // Real time database handling
 
-//        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference databaseReference = database.getReference();
+
+        // inserting data
 
 //        Map<String, String> map= new HashMap<>();
-//        map.put("name", "chayan");
-//        databaseReference.push().setValue(map, new DatabaseReference.CompletionListener() {
+//        map.put("name", "reshav");
+//        Model model = new Model("chayan", "sengupta", "kolkata", "west bengal", "india");
+//        databaseReference.push().setValue(model, new DatabaseReference.CompletionListener() {
 //            @Override
 //            public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
 //
-//                if (databaseError == null){
+//                if (databaseError == null) {
 //
 //                    Log.i("status", "Saving Done...");
 //
-//                }else {
+//                } else {
 //
 //                    Log.i("status", "Saving failed");
 //
@@ -69,6 +77,67 @@ public class MainActivity extends AppCompatActivity {
 //
 //            }
 //        });
+
+        // reading data
+
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+////                String s = dataSnapshot.getValue().toString();
+////                Log.v("received data", "" + dataSnapshot.getValue());
+//
+//                if (dataSnapshot != null){
+//
+//                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+//
+//                        Log.i("data", snapshot.getValue() + "");
+//
+//                    }
+//
+//                }
+//
+////                Log.i("no of rows", "" + databaseList().length);
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+
+
+        DatabaseReference rowRef = databaseReference.child("-MEgvrGYHNZS_f0PKhA9");
+        rowRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+//                Log.i("received data", dataSnapshot.getValue() + "");
+
+                if (dataSnapshot != null){
+
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+
+                        Log.i("data", snapshot.getKey() + "->" + snapshot.getValue() + "");
+
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                Log.i("onCancelled", databaseError.toException().toString());
+
+            }
+        });
+
+
+
 
         // Firestore
 
@@ -110,10 +179,10 @@ public class MainActivity extends AppCompatActivity {
 //                    }
 //                });
 
-        //           Reading data from firestore
+                //           Reading data from firestore
 
-        button = findViewById(R.id.button);
-        textView = findViewById(R.id.textView);
+                button = findViewById(R.id.button);
+                textView = findViewById(R.id.textView);
 
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -157,12 +226,12 @@ public class MainActivity extends AppCompatActivity {
 
 //        Creating custom object
 
-        /*
-        * Create a model class
-        * Connecting this model class with main activity
-        * Using model class in CRUD operations
-        *
-        * */
+                /*
+                 * Create a model class
+                 * Connecting this model class with main activity
+                 * Using model class in CRUD operations
+                 *
+                 * */
 
 //        Model model = new Model("chayan", "sengupta", "kolkata", "west bengal", "india");
 //
@@ -184,50 +253,49 @@ public class MainActivity extends AppCompatActivity {
 //                    }
 //                });
 
-    }
-
-    @Override
-    protected void onStart(){
-
-        super.onStart();
-
-        listener = docref.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-
-                if (e != null){
-
-                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                    return;
-
-                }
-
-                if (documentSnapshot.exists()){
-
-//                    String first = documentSnapshot.getString("first");
-//                    try {
-//
-////                        Log.i("state", state);
-//                        textView.setText(first);
-//
-//                    }catch (NullPointerException e1){
-//
-//                        textView.setText("Not available");
-//
-//                    }
-
-                    Model model = documentSnapshot.toObject(Model.class);
-
-                    String first = model.getFirst();
-                    String last = model.getLast();
-
-                    textView.setText(first + " " + last);
-
-                }
-
             }
-        });
 
-    }
-
+//    @Override
+//    protected void onStart(){
+//
+//        super.onStart();
+//
+//        listener = docref.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+//            @Override
+//            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+//
+//                if (e != null){
+//
+//                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+//                    return;
+//
+//                }
+//
+//                if (documentSnapshot.exists()){
+//
+////                    String first = documentSnapshot.getString("first");
+////                    try {
+////
+//////                        Log.i("state", state);
+////                        textView.setText(first);
+////
+////                    }catch (NullPointerException e1){
+////
+////                        textView.setText("Not available");
+////
+////                    }
+//
+//                    Model model = documentSnapshot.toObject(Model.class);
+//
+//                    String first = model.getFirst();
+//                    String last = model.getLast();
+//
+//                    textView.setText(first + " " + last);
+//
+//                }
+//
+//            }
+//        });
+//
+//    }
 }
